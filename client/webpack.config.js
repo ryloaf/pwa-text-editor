@@ -25,19 +25,21 @@ module.exports = () => {
       new WebpackPwaManifest({
         name: 'PWA Text Editor',
         short_name: 'Text Editor',
-        description: 'A progressive web app for editing text.',
+        description: 'A web app for editing text.',
         background_color: '#ffffff',
         theme_color: '#2196F3',
+        start_url: '/',
         icons: [
           {
-            src: path.resolve('src/img/icon.png'),
-            sizes: [96, 128, 192, 256, 384, 512]
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons')
           }
         ]
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'sw.js'
+        swSrc: './src/src-sw.js',
+        swDest: 'src-sw.js'
       })
     ],
 

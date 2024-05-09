@@ -18,7 +18,7 @@ export const putDb = async (content) => {
   const tx = db.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
   await store.put(content);
-  await tx.done
+  await tx.done;
 };
 console.error('putDb not implemented');
 

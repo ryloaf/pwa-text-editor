@@ -46,4 +46,6 @@ registerRoute(
   })
 );
 
-
+registerRoute(({ request }) => request.destination === 'style', assetCache);
+registerRoute(({ request }) => request.destination === 'script', assetCache);
+registerRoute(({ request }) => request.destination === 'image', assetCache);

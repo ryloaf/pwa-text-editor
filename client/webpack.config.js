@@ -17,48 +17,47 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
-        title: 'PWA Text Editor'
+        template: 'index.html',
+        title: 'Webpack Plugin',
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js'
       }),
       new WebpackPwaManifest({
-        name: 'PWA Text Editor',
-        short_name: 'Text Editor',
-        description: 'A web app for editing text.',
-        background_color: '#ffffff',
+        name: 'PWA Text Generator',
+        short_name: 'Text Generator',
+        description: 'Just a text generator',
+        background_color: '#FFFFFF',
         theme_color: '#2196F3',
         start_url: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512],
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons')
-          }
-        ]
-      }),
-      new InjectManifest({
-        swSrc: './src/src-sw.js',
-        swDest: 'src-sw.js'
+          },
+        ],
       })
     ],
 
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
+          test: /.m?js$/,
+          exclude: /(node_modules|bower_components)/,
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
-            },
-          },
+              presets: ['@babel/preset-env']
+            }
+          }
         },
       ],
     },

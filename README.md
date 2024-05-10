@@ -23,7 +23,8 @@ My task was to build a text editor that runs in the browser. The app is a single
 
   <img width="471" alt="Download-Prompt" src="https://github.com/ryloaf/pwa-text-editor/assets/151485696/43d304ee-bfd8-4740-816e-cc94a3603974">
 
-  <img width="1199" alt="Text-Editor-Download" src="https://github.com/ryloaf/pwa-text-editor/assets/151485696/8443213a-4fbc-4c9a-9697-f1590822e8a1">
+  <img width="1025" alt="Screen Shot 2024-05-09 at 10 21 04 PM" src="https://github.com/ryloaf/pwa-text-editor/assets/151485696/c6f9bd38-b599-42eb-9040-8aa2c9dd2b84">
+
 
 
   ## Credits & Links

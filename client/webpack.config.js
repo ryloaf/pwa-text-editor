@@ -24,7 +24,8 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new InjectManifest({
-        swSrc: './src-sw.js'
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js'
       }),
       new WebpackPwaManifest({
         name: 'PWA Text Generator',
@@ -33,6 +34,7 @@ module.exports = () => {
         background_color: '#FFFFFF',
         theme_color: '#2196F3',
         start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
